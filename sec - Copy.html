@@ -1,0 +1,312 @@
+<html>
+<head>
+<link rel="stylesheet" href="styles.css">
+
+<script>
+    function validateForm() {
+      var inputs = document.getElementsByTagName("input");
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "") {
+          alert("Please fill in all fields.");
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+<title>user login page</title>
+<marquee behaviour="scroll";direction="right">
+<h1 style="color:white;font-size:400%;text-align:center">
+<i>ENTER YOUR DETAILS HERE<i>
+</h1></marquee>
+<hr><hr>
+<form action='det.php'method="post"onsubmit="return validateForm()">
+<fieldset>
+<legend style="color:white;text-align:center"><i><b>YOUR DETAILS:<b><i></legend>
+<p style="text-align:center;">
+<label for="username" style="color:white"><strong>Username<strong>:</label><br>
+<input type="text" id="username" name="username"reqiured><br>
+<label for="email" style="color:white">Enter your email:</label><br>
+<input type="email" id="email" name="email"reuired><br>
+<label for="phone"style="color:white"><b>Phone Number<b>:</label><br>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br>
+<label for="village" style="color:white"><strong>village name <strong>:</label><br>
+<input type="text" id="village" name="village"required><br>
+ <label for="district"style="color:white">Select your district:</label><br>
+        <select name="district" id="district"><br>
+
+            <option value="bagalkot">Bagalkot</option>
+            <option value="ballari">Ballari</option>
+            <option value="bangalore rural">Bangalore Rural</option>
+            <option value="bangalore urban">Bangalore Urban</option>
+            <option value="belgaum">Belgaum</option>
+            <option value="bidar">Bidar</option>
+            <option value="bijapur">Bijapur</option>
+            <option value="chamarajanagara">Chamarajanagara</option>
+            <option value="chikmangalur">Chikmangalur</option>
+            <option value="chitradurga">Chitradurga</option>
+            <option value="dakshina kannada">Dakshina Kannada</option>
+            <option value="davanagere">Davanagere</option>
+            <option value="dharwad">Dharwad</option>
+            <option value="gadag">Gadag</option>
+            <option value="gulbarga">Gulbarga</option>
+            <option value="hassan">Hassan</option>
+            <option value="haveri">Haveri</option>
+            <option value="kodagu">Kodagu</option>
+            <option value="kolar">Kolar</option>
+            <option value="koppal">Koppal</option>
+            <option value="mandya">Mandya</option>
+            <option value="mysore">Mysore</option>
+            <option value="raichur">Raichur</option>
+            <option value="ramanagara">Ramanagara</option>
+            <option value="shimoga">Shimoga</option>
+            <option value="tumakuru">Tumakuru</option>
+            <option value="udupi">Udupi</option>
+            <option value="uttara kannada">Uttara Kannada</option>
+            <option value="vijayanagara">Vijayanagara</option>
+            <option value="yadgir">Yadgir</option>
+
+             </select>
+
+<br>
+<label for="taluk"style="color:white">Select your taluk:</label><br>
+        <select name="taluk" id="taluk"><br>
+
+
+<option value="Afzalpura">Afzalpura</option>
+<option value="Ajjampura">Ajjampura</option>
+<option value="Alanda">Alanda</option>
+<option value="Alamela">Alamela</option>
+<option value="Alnavara">Alnavara</option>
+<option value="Aluru">Aluru</option>
+<option value="Ankola">Ankola</option>
+<option value="Annigeri">Annigeri</option>
+<option value="Arakalagudu">Arakalagudu</option>
+<option value="Arasikere">Arasikere</option>
+<option value="Athani">Athani</option>
+<option value="Aurad">Aurad</option>
+<option value="Badami">Badami</option>
+<option value="Bagalkote">Bagalkote</option>
+<option value="Bailhongal">Bailhongal</option>
+<option value="Bantwala">Bantwala</option>
+<option value="Basavana Bagewadi">Basavana Bagewadi</option>
+<option value="Belagavi">Belagavi</option>
+<option value="Belathangadi">Belathangadi</option>
+<option value="Beluru">Beluru</option>
+<option value="Bhadravathi">Bhadravathi</option>
+<option value="Bhalki">Bhalki</option>
+<option value="Bhatkal">Bhatkal</option>
+<option value="Bhilwara">Bhilwara</option>
+<option value="Bhopal">Bhopal</option>
+<option value="Bidar">Bidar</option>
+<option value="Bijapur">Bijapur</option>
+<option value="Bilagi">Bilagi</option>
+<option value="Bilgi">Bilgi</option>
+<option value="Byadgi">Byadgi</option>
+<option value="Bynduru">Bynduru</option>
+<option value="Chadchan">Chadchan</option>
+<option value="Chadchana">Chadchana</option>
+<option value="Chakkarakkal">Chakkarakkal</option>
+<option value="Chalakudy">Chalakudy</option>
+<option value="Challakere">Challakere</option>
+<option value="Chamarajanagara">Chamarajanagara</option>
+<option value="Channagiri">Channagiri</option>
+<option value="Channarayapattana">Channarayapattana</option>
+<option value="Cheluru">Cheluru</option>
+<option value="Chikkaballapura">Chikkaballapura</option>
+<option value="Chikkamagaluru">Chikkamagaluru</option>
+<option value="Chikkodi">Chikkodi</option>
+<option value="Chikkanayakanahalli">Chikkanayakanahalli</option>
+<option value="Chikmagalur">Chikmagalur</option>
+<option value="Chiknayakanhalli">Chiknayakanhalli</option>
+<option value="Chikodi">Chikodi</option>
+<option value="Chikkamagaluru">Chikkamagaluru</option>
+<option value="Chiknayakanhalli">Chiknayakanhalli</option>
+<option value="Chikodi">Chikodi</option>
+<option value="Chincholi">Chincholi</option>
+<option value="Chintamani">Chintamani</option>
+<option value="Davanagere">Davanagere</option>
+<option value="Devara Hipparagi">Devara Hipparagi</option>
+<option value="Devadurga">Devadurga</option>
+<option value="Dandeli">Dandeli</option>
+<option value="Dharwad">Dharwad</option>
+<option value="Dharmasthala">Dharmasthala</option>
+<option value="Doddaballapura">Doddaballapura</option>
+<option value="Gadag">Gadag</option>
+<option value="Gajendragada">Gajendragada</option>
+<option value="Gangavathi">Gangavathi</option>
+<option value="Gauribidanuru">Gauribidanuru</option>
+<option value="Gokak">Gokak</option>
+<option value="Gokarna">Gokarna</option>
+<option value="Gubbi">Gubbi</option>
+<option value="Guledgudda">Guledgudda</option>
+<option value="Gurmitkala">Gurmitkala</option>
+<option value="Haliyal">Haliyal</option>
+<option value="Hangala">Hangala</option>
+<option value="Hagaribommanahalli">Hagaribommanahalli</option>
+<option value="Harapanahalli">Harapanahalli</option>
+<option value="Harohalli">Harohalli</option>
+<option value="Hassan">Hassan</option>
+<option value="Hebri">Hebri</option>
+<option value="Hirekeruru">Hirekeruru</option>
+<option value="Hirenallur">Hirenallur</option>
+<option value="Hodal">Hodal</option>
+<option value="Holalkere">Holalkere</option>
+<option value="Hosadurga">Hosadurga</option>
+<option value="Hosakote">Hosakote</option>
+<option value="Hosanagara">Hosanagara</option>
+<option value="Hosapete">Hosapete</option>
+<option value="Hosanagara">Hosanagara</option>
+<option value="Hosapete">Hosapete</option>
+<option value="Humnabad">Humnabad</option>
+<option value="Hungund">Hungund</option>
+<option value="Hunsagi">Hunsagi</option>
+<option value="Ilkal">Ilkal</option>
+<option value="Indi">Indi</option>
+<option value="Jagaluru">Jagaluru</option>
+<option value="Jamkhandi">Jamkhandi</option>
+<option value="Jevargi">Jevargi</option>
+<option value="Joida">Joida</option>
+<option value="Kadaba">Kadaba</option>
+<option value="Kadaba">Kadaba</option>
+<option value="Kadur">Kadur</option>
+<option value="Kalaburagi">Kalaburagi</option>
+<option value="Kalasa">Kalasa</option>
+<option value="Kamalapura">Kamalapura</option>
+<option value="Kamalanagara">Kamalanagara</option>
+<option value="Kanakagiri">Kanakagiri</option>
+<option value="Kanakapura">Kanakapura</option>
+<option value="Karanja">Karanja</option>
+<option value="Karwar">Karwar</option>
+<option value="Khanapura">Khanapura</option>
+<option value="Kitturu">Kitturu</option>
+<option value="Kodagu">Kodagu</option>
+<option value="Kolar">Kolar</option>
+<option value="Kolar Gold Fields (Robertsonpete)">Kolar Gold Fields (Robertsonpete)</option>
+<option value="Koppa">Koppa</option>
+<option value="Koratagere">Koratagere</option>
+<option value="Kotturu">Kotturu</option>
+<option value="Krishnagiri">Krishnagiri</option>
+<option value="Krishnarajapete">Krishnarajapete</option>
+<option value="Krishnarajanagara">Krishnarajanagara</option>
+<option value="Kukanoor">Kukanoor</option>
+<option value="Kukanur">Kukanur</option>
+<option value="Kulali">Kulali</option>
+<option value="Kumta">Kumta</option>
+<option value="Kundagolu">Kundagolu</option>
+<option value="Kundapura">Kundapura</option>
+<option value="Kurugodu">Kurugodu</option>
+<option value="Kushtagi">Kushtagi</option>
+<option value="Kushalnagara">Kushalnagara</option>
+<option value="Lingasaguru">Lingasaguru</option>
+<option value="Madduru">Madduru</option>
+<option value="Madhugiri">Madhugiri</option>
+<option value="Madikeri">Madikeri</option>
+<option value="Magadi">Magadi</option>
+<option value="Malavalli">Malavalli</option>
+<option value="Malur">Malur</option>
+<option value="Malavalli">Malavalli</option>
+<option value="Malpe">Malpe</option>
+<option value="Malur">Malur</option>
+<option value="Mandya">Mandya</option>
+<option value="Mangaluru">Mangaluru</option>
+<option value="Molakalmuru">Molakalmuru</option>
+<option value="Moodbidri">Moodbidri</option>
+<option value="Mudabidri">Mudabidri</option>
+<option value="Mudalgi">Mudalgi</option>
+<option value="Muddebihala">Muddebihala</option>
+<option value="Mudhol">Mudhol</option>
+<option value="Mudigere">Mudigere</option>
+<option value="Mudigere">Mudigere</option>
+<option value="Mudigere">Mudigere</option>
+<option value="Mudigere">Mudigere</option>
+<option value="Mundagodu">Mundagodu</option>
+<option value="Mundaragi">Mundaragi</option>
+<option value="Nagamangala">Nagamangala</option>
+<option value="Naragunda">Naragunda</option>
+<option value="Narasimharajapura">Narasimharajapura</option>
+<option value="Navalgunda">Navalgunda</option>
+<option value="Nelamangala">Nelamangala</option>
+<option value="Nippani">Nippani</option>
+<option value="Puttur">Puttur</option>
+<option value="Pandavapura">Pandavapura</option>
+<option value="Pavagada">Pavagada</option>
+<option value="Piriyapattana">Piriyapattana</option>
+<option value="Ponnampet">Ponnampet</option>
+<option value="Ponnampet">Ponnampet</option>
+<option value="Rabkavi Banhatti">Rabkavi Banhatti</option>
+<option value="Ramanagara">Ramanagara</option>
+<option value="Ramadurga">Ramadurga</option>
+<option value="Rayabaga">Rayabaga</option>
+<option value="Rona">Rona</option>
+<option value="Sakleshpura">Sakleshpura</option>
+<option value="Saligrama">Saligrama</option>
+<option value="Sanduru">Sanduru</option>
+<option value="Saraguru">Saraguru</option>
+<option value="Savadatti">Savadatti</option>
+<option value="Shahabad">Shahabad</option>
+<option value="Shahapura">Shahapura</option>
+<option value="Shikaripura">Shikaripura</option>
+<option value="Shirahatti">Shirahatti</option>
+<option value="Siddapura">Siddapura</option>
+<option value="Sindgi">Sindgi</option>
+<option value="Sindhanuru">Sindhanuru</option>
+<option value="Sira">Sira</option>
+<option value="Sirsi">Sirsi</option>
+<option value="Sirawara">Sirawara</option>
+<option value="Siriguppa">Siriguppa</option>
+<option value="Soraba">Soraba</option>
+<option value="Sringeri">Sringeri</option>
+<option value="Srinivasapura">Srinivasapura</option>
+<option value="Surapura">Surapura</option>
+<option value="Sulya">Sulya</option>
+<option value="Tarikere">Tarikere</option>
+<option value="Tikote">Tikote</option>
+<option value="Tiptur">Tiptur</option>
+<option value="Tumakuru">Tumakuru</option>
+<option value="Turuvekere">Turuvekere</option>
+<option value="Udupi">Udupi</option>
+<option value="Ullal">Ullal</option>
+<option value="Vadagera">Vadagera</option>
+<option value="Vijayapura">Vijayapura</option>
+<option value="Virajapete">Virajapete</option>
+<option value="Yadagiri">Yadagiri</option>
+<option value="Yellapura">Yellapura</option>
+<option value="Yelanduru">Yelanduru</option>
+<option value="Yelahanka">Yelahanka</option>
+<option value="Yelaburga">Yelaburga</option>
+<option value="Yedrami">Yedrami</option>
+<option value="Yelaburga">Yelaburga</option>
+<option value="Yedrami">Yedrami</option>
+<option value="Yeshwantapura">Yeshwantapura</option>
+<option value="Yeshwantapura">Yeshwantapura</option>
+</select>
+
+<br>
+
+
+ <a href=complaint.html>
+  <input type="submit" value="submit"><br>
+<a/>
+</form>
+</fieldset>
+</p>
+<h2 style="color:white;font-size:400%;text-align:center;">WE ARE HERE FOR YOU</h2>
+</head>
+<body>
+<style>
+body
+{
+background-image:url('sec.jpg');
+background-repeat:no repeat;
+background-attachment:fixed;
+background-size:100% 100%;
+}
+
+<hr>
+<marquee behaviour="scroll";direction="right">
+<h5 style="font-size:350%;color:white;">COMPLAINT REGISTRATION COMPLETED</h5></marquee>
+
+</style>
+</body>
+</html>

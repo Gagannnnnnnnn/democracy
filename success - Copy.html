@@ -1,0 +1,104 @@
+<?php
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    // User is not logged in, redirect to the login page
+    header("Location: index.html");
+    exit();
+}
+
+// Database connection details
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "india";
+
+// Create a connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>Welcome, Admin!</h1>
+    <p>This is the admin-only page.</p>
+
+    <h2>User Details</h2>
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Village</th>
+            <th>District</th>
+            <th>Taluk</th>
+        </tr>
+        <?php
+        // Retrieve user details from the 'user_details' table
+        $userDetailsQuery = "SELECT * FROM user_details";
+        $userDetailsResult = $conn->query($userDetailsQuery);
+
+        if ($userDetailsResult->num_rows > 0) {
+            while ($row = $userDetailsResult->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["username"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
+                echo "<td>" . $row["phone"] . "</td>";
+                echo "<td>" . $row["village"] . "</td>";
+                echo "<td>" . $row["district"] . "</td>";
+                echo "<td>" . $row["taluk"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='6'>No user details found.</td></tr>";
+        }
+        ?>
+    </table>
+
+    <h2>Complaints</h2>
+    <table>
+        <tr>
+            <th>complaints</th>
+            <th>candidate discription</th>
+            <th>images</th>
+            <th>Username</th>
+        </tr>
+        <?php
+        // Retrieve complaints from the 'complaints' table
+        $complaintsQuery = "SELECT * FROM complaints";
+        $complaintsResult = $conn->query($complaintsQuery);
+
+        if ($complaintsResult->num_rows > 0) {
+            while ($row = $complaintsResult->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["message"] . "</td>";
+                echo "<td>" . $row["candidate"] . "</td>";
+                echo "<td>" . $row["image__path"] . "</td>";
+                echo "<td>" . $row["username"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No complaints found.</td></tr>";
+        }
+        ?>
+    </table>
+
+   <button> <a href="logout.php">Logout</a></button>        <button><a href="index.html">GO BACK</a></button>
+</body>
+</html>
+
+<?php
+// Close the database connection
+$conn->close();
+?>
+

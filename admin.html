@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,intial-scale=1">
+<style>
+*{
+box-sizing:border-box;
+}
+header
+{
+padding:0px;
+width:100%;
+height:100px;
+}
+nav
+{
+padding:20px;
+width:100%;
+height:100px;
+}
+aside
+{
+float:left;
+padding:0px;
+width:40%;
+height:300px;
+}
+article
+{
+float:right;
+padding:35px;
+width:60%;
+height:700px;
+}
+section::after
+{
+content:"";
+display:table;
+clear:both;
+}
+footer
+{
+padding:10px;
+text-align:center;
+}
+@media (max-width:600px)
+{
+nav,article{
+width:100%;
+height:auto;
+}}
+</style>
+
+
+<!DOCKTYPE html>
+<html>
+<title>COMPLAINT</title>
+<style>
+body
+{
+background-image:url('comp.jpg');
+background-repeat:no repeat;
+background-attachment:fixed;
+background-size:100% 100%;
+}
+<script>
+    function validateForm() {
+      var inputs = document.getElementsByTagName("input");
+      for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "") {
+          alert("Please fill in all fields.");
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+</style>
+<body>
+<header>
+<h1 style="color:white;text-align:center;width:px;height:2000px">
+ADMIN'S LOGIN ONLY
+</h1>
+
+</header>
+<nav>
+
+<hr>
+<hr>
+
+</nav>
+<aside>
+<img src="adminpic.jpg"style="float:right">
+</aside>
+<article>
+<h2 style="float:left">
+<fieldset style="color:white;text-align:center;font-size:25px">
+ <form action="adminlogin.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <br>
+        <input type="submit" value="Login">
+    </form>
+
+
+
+ 
+</fieldset>
+</h2>
+</article>
+
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+

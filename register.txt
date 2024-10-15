@@ -1,0 +1,47 @@
+<?php
+session_start();
+require_once 'dbconfig.php';
+require_once 'PHPMailer/PHPMailer.php';
+require_once 'PHPMailer/SMTP.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmPassword = $_POST['confirm_password'];
+
+    if ($password !== $confirmPassword) {
+        $error = "Passwords do not match.";
+    } else {
+        // Generate a verification token
+        $verificationToken = md5(uniqid());
+
+        // Hash the password
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+        // Prepare and execute the statement
+        $stmt = $conn->prepare("INSERT INTO users (email, password_hash, verification_token) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $email, $passwordHash, $verificationToken);
+
+        if ($stmt->execute()) {
+            // Send verification email
+            $mail = new PHPMailer\PHPMailer\PHPMailer();
+            $mail->setFrom('noreply@yourwebsite.com', 'Your Website');
+            $mail->addAddress($email);
+            $mail->Subject = "Verify Your Email";
+            $mail->Body = "Click the link below to verify your email:\n";
+            $mail->Body .= "http://yourwebsite.com/verify.php?email=" . urlencode($email) . "&token=" . $verificationToken;
+
+            if ($mail->send()) {
+                $successMessage = "Registration successful! Please check your email to verify your account.";
+            } else {
+                $error = "Registration failed. Please try again later.";
+            }
+        } else {
+            $error = "Registration failed. Please try again later.";
+        }
+
+        $stmt->close();
+    }
+}
+?>
+<!-- Your HTML form here -->

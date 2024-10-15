@@ -1,0 +1,14 @@
+/* Add styles for the complaint-cell class */
+.et1,.et2,.et3,.et4,.et5,.et6,.et7{
+    max-width: 100px; /* Adjust the width as needed */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Show the full text on hover */
+.et1:hover,.et2:hover,.et3:hover,.et4:hover,.et5:hover,.et6:hover,.et7:hover {
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+}
